@@ -37,8 +37,9 @@ This isn't essential, one could write own Python code to "log people in or regis
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{}".format(db_path)*
 
 For some reason, setting the path to be "sqlite:///bakery.db" (as a relative path) does not create bakery.db at runtime. Therefore, this code (from online) provides the full path name so Flask SQLAlchemy can reach the correct path.
-# If possible, internalise env configs to be in a .env file and load it before running the Flask program
-# I have used config.py to start the initialisation of configuration.
+
+--- If possible, internalise env configs to be in a .env file and load it before running the Flask program
+--- I have used config.py to start the initialisation of configuration.
 
 1c) *with app.app_context():*
 
@@ -80,11 +81,11 @@ A python file to initialise the original database.
 
 5) *routes.py*
 This defines all routes that is not related to transactions, not authentication.
-# index
+--- index
 
 6) *auth.py*
 This defines all routes that need authentication as well as some supplementary functions to assist.
-# login, logout, register.
+---login, logout, register.
 
 7) *transact.py*
 This defines all routes that do not fall into 5) and 6).
